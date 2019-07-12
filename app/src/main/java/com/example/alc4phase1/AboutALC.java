@@ -3,6 +3,7 @@ package com.example.alc4phase1;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 public class AboutALC extends AppCompatActivity {
@@ -12,9 +13,12 @@ public class AboutALC extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about_activity);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mWebView = findViewById(R.id.web_view);
-        mWebView.getSettings().setJavaScriptEnabled(true);
+        WebSettings webSettings = mWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
         mWebView.setWebViewClient(new WebViewC());
         mWebView.loadUrl("https://andela.com/alc/");
     }
