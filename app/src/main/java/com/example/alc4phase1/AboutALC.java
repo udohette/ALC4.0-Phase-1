@@ -7,14 +7,11 @@ import android.webkit.WebView;
 
 public class AboutALC extends AppCompatActivity {
     WebView mWebView;
-    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about_activity);
-        toolbar = findViewById(R.id.toolbar);
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mWebView = findViewById(R.id.web_view);
         mWebView.getSettings().setJavaScriptEnabled(true);
